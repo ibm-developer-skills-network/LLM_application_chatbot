@@ -40,8 +40,8 @@ const sendMessage = async (message) => {
   messagesContainer.appendChild(loadingElement);
   messagesContainer.appendChild(loadingtextElement);
   
-  // the fetch content sent to the model
-  response = await fetch('http://localhost:8000/chatbot', {
+  // the fetch content sent to the model (change to your own hosted model url)
+  response = await fetch('https://jcchen-8000.theia-1-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai/chatbot', {
   method: 'POST',
   mode: 'cors',
   headers: {
@@ -66,7 +66,6 @@ const sendMessage = async (message) => {
   const data = await response.json();
   if (data.error) {
     // Handle the error here
-    //const errorMessage = 'Error：\n'+data.error.message;
     const errorMessage = JSON.stringify(data);
     addMessage(errorMessage, 'error','Error.png');
   } else {
