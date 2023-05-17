@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!--general infomraion of the webpage-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chatbot</title>
+    <meta name="author" content="J.C. Chen">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href='favicon.ico' type="image/x-icon">
+    <link rel="icon" href='favicon.ico' type="image/x-icon">
+  </head>
+  <!--end general information-->
+  <body>
+
+    <header>
+      <div class="color-block"></div>
+    </header>
+
+    <!--Chatbot container-->
+    <main>  
+      <div class="chatbot" id="messages-container">
+        <div class="chat-header">
+          <h1>Chatbot &#129302</h1>
+        </div>
+        <form class="chat-form" id="message-form">
+          <textarea type="text" id="message-input" placeholder="Please enter what you want to say"></textarea>
+          <button type="submit">send &#9993;</button> 
+        </form>
+      </div>
+    </main>
+    <!--end chatbot container-->
+    <!--footer-->
+    <footer>
+        <div>
+            <div>
+                <span><a>Copyright © JC 2023</a></span> <br>
+                <span><a>Created by JC with &#10084;</a></span>
+            </div>
+        </div>
+    </footer>
+    <!--end footer-->
+
+    <!--Javascript to call the language model-->
+    <script src="script.js"></script>
+    <!--end Javascript to call the langauge model-->
+  </body>
+</html>
