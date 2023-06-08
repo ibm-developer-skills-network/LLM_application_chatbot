@@ -30,7 +30,8 @@ const addMessage = (message, role, imgSrc) => {
 
 //Section: Calling the model
 const sendMessage = async (message) => {
-  addMessage(message, 'user','user.jpeg');
+  // addMessage(message, 'user','user.jpeg');
+  addMessage(message, 'user','../static/user.jpeg');
   // Loading animation
   const loadingElement = document.createElement('div');
   const loadingtextElement = document.createElement('p');
@@ -39,46 +40,57 @@ const sendMessage = async (message) => {
   loadingtextElement.innerText = 'Loading....Please wait';
   messagesContainer.appendChild(loadingElement);
   messagesContainer.appendChild(loadingtextElement);
+
+  async function makePostRequest(msg) {
+    const url = 'www.example.com';  // Make a POST request to this url
+    const requestBody = {
+      prompt: msg
+    };
   
-  // the fetch content sent to the model (change to your own hosted model url)
-  response = await fetch('https://jcchen-8000.theia-1-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai/chatbot', {
-  method: 'POST',
-  mode: 'cors',
-  headers: {
-    'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*',
-  },
-  body: JSON.stringify({
-    inputs: {
-      past_user_inputs: savedpasttext,
-      generated_responses: savedpastresponse,
-      text: message
+    try {
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(requestBody)
+      });
+  
+      const data = await response.text();
+      // Handle the response data here
+      console.log(data);
+      return data;
+    } catch (error) {
+      // Handle any errors that occurred during the request
+      console.error('Error:', error);
+      return error
     }
-  })
-});
+  }
+  
+  var res = await makePostRequest(message);
+  
+  data = {"response": res};
+  
   // Deleting the loading animation
   const loadanimation = document.querySelector('.loading-animation');
   const loadtxt = document.querySelector('.loading-text');
   loadanimation.remove();
   loadtxt.remove();
 
-  // Hoding the respones
-  const data = await response.json();
   if (data.error) {
     // Handle the error here
     const errorMessage = JSON.stringify(data);
-    addMessage(errorMessage, 'error','Error.png');
+    // addMessage(errorMessage, 'error','Error.png');
+    addMessage(errorMessage, 'error','../static/Error.png');
   } else {
     // Process the normal response here
     const responseMessage = data['response'];
-    addMessage(responseMessage, 'aibot','Bot_logo.png');
+    // addMessage(responseMessage, 'aibot','Bot_logo.png');
+    addMessage(responseMessage, 'aibot','../static/Bot_logo.png');
   }
   
-  // save the content in history
-  savedpasttext.push(message);
-  savedpastresponse.push(JSON.stringify(data['response']));
-  console.log(savedpasttext);
-  console.log(savedpastresponse);
+  //!!!!! code to  save the content in history
+  //
 };
 //
 
