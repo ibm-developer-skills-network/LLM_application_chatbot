@@ -1,4 +1,8 @@
-FROM tiangolo/uwsgi-nginx-flask:python3.8
-ENV LISTEN_PORT 8501
-EXPOSE 8501
+FROM python:3.10
+
+WORKDIR /LLM_application_chatbot
 COPY . .
+
+RUN pip install -r requirements.txt
+
+CMD ["python", "-u", "app.py"]
