@@ -1,3 +1,4 @@
 Flask
 Flask_Cors
-transformers
+torch==1.11.*
+transformers==4.*
