@@ -1,8 +1,14 @@
+# Specify the parent image from which we build
 FROM python:3.10
 
+# Set the working directory
 WORKDIR /LLM_application_chatbot
-COPY . .
 
-RUN pip install -r requirements.txt
+# install the dependencies and packages in the requirements file
+RUN pip3 install --no-cache-dir -r requirements.txt
 
-CMD ["python", "-u", "app.py"]
+# copy every content from the local file to the image
+COPY . /LLM_application_chatbot
+
+# configure the container to run in an executed manner
+CMD ["python", "app.py"]
