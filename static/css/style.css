@@ -7,6 +7,16 @@
 
 body {
   font-family: Arial, sans-serif;
+  padding-left: 5em;
+  padding-top: 3em;
+
+  background-image: url("https://media.discordapp.net/attachments/993702831850786886/1117894163686510752/bgJC_copy.jpg");
+  /* background-image: url("https://images.unsplash.com/photo-1591311337241-cecfd26f1da1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2thdGVib2FyZGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"); */
+  background-repeat: no-repeat;
+
+  /* fit the entire background image */
+  background-size: 100% 100%;
+  background-position: center;
 }
 
 header {
@@ -53,15 +63,11 @@ footer a {
 /* ---------------- */
 /* Chatbot box head*/
 .chatbot {
-  max-width: 1600px;
-  margin: 20px auto;
-  border: 1px solid #7B58E5;
-  border-radius: 10px;
+  max-width: 100em;
   overflow: hidden;
 }
 
 .chat-header {
-  background-color: #ffffff;
   color: rgb(0, 0, 0);
   padding: 10px;
 }
@@ -69,10 +75,17 @@ footer a {
 .chat-header h1 {
   margin: 0;
   margin-bottom: 10px;
-  text-align: center;
-  color: #7B58E5;
+  /* text-align: center; */
+  color: #000000;
+  
+  /* Use a modern looking font */
+  font-family: 'Roboto', sans-serif;
+  font-size: 3em;
 }
 
+.header-sub-text {
+  padding: 10px;
+}
 
 .chat-header h5 {
   display: inline-block;
@@ -110,28 +123,36 @@ option:hover {
 
 .chat-form {
   display: flex;
-  padding: 10px;
-}
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  }
 
 .chat-form textarea[type="text"] {
   flex-grow: 1;
   margin-right: 10px;
   padding-left: 10px;
   padding-top: 10px;
-  border-radius: 15px;
-  border: 1px solid  #7B58E5;
+  border-radius: 7px;
+  border: 1px solid darkgray;
   font-size: 15px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
   resize: both;
   overflow: auto;
   box-sizing: border-box;
   height: auto;
-  max-height: 1000px;
+  max-height: 2.4em;
   min-width: 200px;
   max-width: 1500px;
 }
 
+*:focus {
+  outline: 0;
+}
+
 #recordButton{
-  background-color: #7B58E5;
+  background-color: blue;
   color: white;
   border: none;
   padding: 10px;
@@ -143,14 +164,16 @@ option:hover {
 }
 
 .chat-form button[type="submit"] {
-  background-color: #7B58E5;
+  background-color: #0891B2;
   color: white;
+  font-size: 1em;
   border: none;
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
-  min-width: 150px;
-  max-width: 200px;
+  min-width: 4em;
+  max-width: 4em;
+  max-height: 2.4em;
 }
 /* ---------------- */
 
@@ -226,7 +249,7 @@ option:hover {
 
 .user p {
   max-width: 70%;
-  background-color: #2bff00;
+  background-color: #f5f2fd;
   color: #272727;
   border: 1px solid #ccc;
   align-self: flex-start;
@@ -291,6 +314,14 @@ option:hover {
   align-self: flex-end;
   float: left;
   text-align: left;
+}
+
+.spacer {
+  min-height: 37em;
+}
+
+.purple {
+  color: #7B58E5;
 }
 /* ---------------- */
 

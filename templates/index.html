@@ -16,37 +16,32 @@
   <!--end general information-->
   <body>
 
-    <header>
+    <!-- <header>
       <div class="color-block"></div>
-    </header>
+    </header> -->
 
     <!--Chatbot container-->
     <main>  
-      <div class="chatbot" id="messages-container">
+      <div class="chatbot">
         <div class="chat-header">
           <h1>My LLM</h1>
         </div>
+        <div class="header-sub-text">
+          <p>Copyright © JC 2023 - Created by JC with <a class="purple">❤</a></p>
+        </div>
+
+        <div class="spacer" id="messages-container"></div>
+        
         <form class="chat-form" id="message-form">
-          <textarea type="text" id="message-input" placeholder="Please enter what you want to say"></textarea>
-          <button type="submit">send &#9993;</button> 
+          <textarea type="text" id="message-input" placeholder="Send a message..."></textarea>
+          <button type="submit">➤</button> 
         </form>
       </div>
     </main>
     <!--end chatbot container-->
-    <!--footer-->
-    <footer>
-        <div>
-            <div>
-                <span><a>Copyright © JC 2023</a></span> <br>
-                <span><a>Created by JC with &#10084;</a></span>
-            </div>
-        </div>
-    </footer>
-    <!--end footer-->
 
     <!--Javascript to call the language model-->
-    <!-- <script src="script.js"></script> -->
     <script src="{{ url_for('static', filename='script.js') }}"></script>
-    <!--end Javascript to call the langauge model-->
+    <!--end Javascript to call the language model-->
   </body>
 </html>
