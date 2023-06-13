@@ -99,7 +99,7 @@ messageForm.addEventListener('submit', async (event) => {
   event.preventDefault();
   const message = messageInput.value.trim();
   if (message !== '') {
-    await sendMessage(message);
     messageInput.value = '';
+    await sendMessage(message);
   }
 });
